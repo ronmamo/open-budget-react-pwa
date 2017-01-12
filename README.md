@@ -9,4 +9,10 @@ npm install
 npm start
 ```
 
+#### Stack
+- React.js (started with create-react-app)
+- Material-UI
+- Apollo client
+- Recharts
+
 ![output](https://cloud.githubusercontent.com/assets/2588829/21889305/f420fa36-d8d0-11e6-8dcf-c6dea19bb8ce.gif)

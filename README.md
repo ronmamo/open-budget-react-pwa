@@ -8,3 +8,5 @@ allowing a developer to quickly create a prototype of an open budget **mini site
 npm install
 npm start
 ```
+
+![output](https://cloud.githubusercontent.com/assets/2588829/21888081/5cc87fc4-d8cb-11e6-9c57-98ecd8dd844e.gif)

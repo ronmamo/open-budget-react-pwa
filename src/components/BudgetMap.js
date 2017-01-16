@@ -20,7 +20,7 @@ const styles = {
     budget(year: $year, where: $where, perPage: 100) {
       edges {
         node {
-          code, year, title, netAllocated
+          code, year, title, netAllocated, groupTop
         }
       }
     }
@@ -45,12 +45,21 @@ export class BudgetMap extends Component {
 
   COLORS = ['#8889DD', '#9597E4', '#8DC77B', '#A5D297', '#E2CF45', '#F8C12D'];
 
+  hashCode(str) {
+    return str.split("").reduce((a, b) => {
+      a = ((a << 5) - a) + b.charCodeAt(0);
+      return a & a;
+    }, 0);
+  }
+
   transform(item, index) {
+    // const color = this.COLORS[index % this.COLORS.length];
+    const color = this.COLORS[this.hashCode(item.groupTop.toString()) % this.COLORS.length];
     return Object.assign({
       name: item.title,
       ref: item,
       value: item.netAllocated,
-      color: this.COLORS[index % this.COLORS.length]
+      color: color
     });
   }
 

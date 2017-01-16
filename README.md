@@ -14,5 +14,6 @@ npm start
 - Material-UI
 - Apollo client
 - Recharts
+- D3 (v3)
 
 ![output](https://cloud.githubusercontent.com/assets/2588829/21889305/f420fa36-d8d0-11e6-8dcf-c6dea19bb8ce.gif)

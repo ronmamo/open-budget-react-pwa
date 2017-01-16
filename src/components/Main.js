@@ -4,11 +4,11 @@ import Helmet from "react-helmet";
 import "tachyons";
 import {Header} from "./Header";
 import {SearchBar} from "./SearchBar";
-import {BudgetMap} from "./BudgetMap";
 import {BudgetTabView} from "./BudgetTabView";
+import {BudgetTabGraph} from "./BudgetTabGraph";
 import "../static/App.css";
 
-export const currency = value => value ? value >= 1000000 ? `${(value / 1000000).toFixed(3)} מ₪` : `${value.toLocaleString()} ₪` : '';
+export const currency = value => value ? `${value.toLocaleString()} ₪` : '';
 
 const styles = {
   container: {
@@ -70,29 +70,16 @@ export class Main extends Component {
       return (<div>Redirecting...</div>);
     }
     const {selected} = this.state;
-    const title = `${selected.title} - מפתח התקציב`;
+    const title = 'מפתח התקציב' + (selected.title ? ` - ${selected.title}` : '');
     const actions = {onFilter: this.onFilter, onSelect: this.onSelect};
     return (
       <div style={styles.container}>
         <Helmet title={title}/>
         <Header/>
         <SearchBar/>
-        <Breadcrumbs selected={selected} actions={actions}/>
-        <BudgetMap code={code} year={year} filter={this.state.filter} actions={actions}/>
+        <BudgetTabGraph code={code} year={year} filter={this.state.filter} actions={actions}/>
         <BudgetTabView code={code} year={year} actions={actions}/>
       </div>
     );
-  }
+ }
 }
-
-export class Breadcrumbs extends Component {
-
-  render() {
-    const {group_top, group_full} = this.props.selected;
-    const breadcrumbs = group_top ? `${group_top} / ${group_full}` : '';
-    return (
-      <div>{breadcrumbs}</div>
-    );
-  }
-}
-

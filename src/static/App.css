@@ -80,3 +80,119 @@ body {
     border-top: 1px solid #f5f5f5;
     margin: 0;
 }
+
+/**/
+.node {
+    font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    fill: #bbb;
+}
+
+.node:hover {
+    fill: #000;
+}
+
+.link {
+    stroke: steelblue;
+    stroke-opacity: .4;
+    fill: none;
+    pointer-events: none;
+}
+
+.node:hover,
+.node--source,
+.node--target {
+    font-weight: 700;
+}
+
+.node--source {
+    fill: #2ca02c;
+}
+
+.node--target {
+    fill: #d62728;
+}
+
+.link--source {
+    stroke-opacity: 1;
+    stroke-width: 2px;
+    stroke: #d62728;
+}
+
+.link--target {
+    stroke-opacity: 1;
+    stroke-width: 2px;
+    stroke: #2ca02c;
+}
+
+.node circle {
+    fill: #999;
+}
+
+.node text {
+    font: 10px sans-serif;
+}
+
+.node--internal circle {
+    fill: #555;
+}
+
+.node--internal text {
+    text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+.chord {
+    fill-opacity: .67;
+}
+
+text {
+    font: 10px sans-serif;
+}
+
+.dot {
+    stroke: #000;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.label {
+    fill: #777;
+}
+
+.year.label {
+    font: 500 196px "Helvetica Neue";
+    fill: #ddd;
+}
+
+.year.label.active {
+    fill: #aaa;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+    cursor: ew-resize;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font: 10px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
